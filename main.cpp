@@ -1,14 +1,17 @@
-//
-//  main.cpp
-//  ksiazkaObiektowo
-//
-//  Created by Sonia Nikiel on 13/06/2024.
-//
-
 #include <iostream>
+#include "KsiazkaAdresowa.hpp"
 
-int main(int argc, const char * argv[]) {
-    // insert code here...
-    std::cout << "Hello, World!\n";
+
+using namespace std;
+
+int main() {
+   
+    KsiazkaAdresowa ksiazkaAdresowa;
+    ksiazkaAdresowa.rejestracjaUzytkownika();
+    ksiazkaAdresowa.rejestracjaUzytkownika();
+    ksiazkaAdresowa.rejestracjaUzytkownika();
+    ksiazkaAdresowa.wypiszWszystkichUzytkownikow();
+    
+    
     return 0;
 }
