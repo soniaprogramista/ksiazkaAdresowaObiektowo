@@ -10,7 +10,8 @@ int main() {
     //ksiazkaAdresowa.wypiszWszystkichUzytkownikow();
     idZalogowanegoUzytkownika = ksiazkaAdresowa.logowanieUzytkownika();
     ksiazkaAdresowa.zmianaHaslaZalogowanegoUzytkownika(idZalogowanegoUzytkownika);
-    ksiazkaAdresowa.wypiszWszystkichUzytkownikow();
+    idZalogowanegoUzytkownika = ksiazkaAdresowa.wylogowanieUzytkownika();
+    //ksiazkaAdresowa.wypiszWszystkichUzytkownikow();
     
     return 0;
     
