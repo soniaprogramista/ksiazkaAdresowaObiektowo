@@ -1,7 +1,6 @@
 #include <iostream>
 #include "KsiazkaAdresowa.hpp"
 
-
 using namespace std;
 
 int main() {
@@ -11,7 +10,6 @@ int main() {
     ksiazkaAdresowa.rejestracjaUzytkownika();
     ksiazkaAdresowa.rejestracjaUzytkownika();
     ksiazkaAdresowa.wypiszWszystkichUzytkownikow();
-    
     
     return 0;
 }
