@@ -1,6 +1,6 @@
 #ifndef UZYTKOWNIKMENADZER_H
 #define UZYTKOWNIKMENADZER_H
-
+#include <thread>
 #include <iostream>
 using namespace std;
 #include<fstream>
@@ -22,6 +22,9 @@ public:
     void rejestracjaUzytkownika();
     void wypiszWszystkichUzytkownikow();
     void wczytajUzytkownikowZPliku();
+    int logowanieUzytkownika();
+    void zmianaHaslaZalogowanegoUzytkownika(int idZalogowanegoUzytkownika);
+
 };
 
 #endif
