@@ -25,3 +25,9 @@ int KsiazkaAdresowa::wylogowanieUzytkownika()
     idZalogowanegoUzytkownika = uzytkownikMenadzer.wylogowanieUzytkownika();
     return idZalogowanegoUzytkownika;
 }
+int KsiazkaAdresowa::dodawanieAdresata()
+{
+    idOstatniegoAdresata = adresatMenadzer.dodajAdresata(idZalogowanegoUzytkownika, idOstatniegoAdresata);
+
+    return idOstatniegoAdresata;
+}
