@@ -123,3 +123,9 @@ void UzytkownikMenadzer::zmianaHaslaZalogowanegoUzytkownika(int idZalogowanegoUz
     
     plikZUzytkownikami.zapiszWszystkichUzytkownikowDoPliku(uzytkownicy);
 }
+
+int UzytkownikMenadzer::wylogowanieUzytkownika()
+{
+    idZalogowanegoUzytkownika = 0;
+    return idZalogowanegoUzytkownika;
+}
