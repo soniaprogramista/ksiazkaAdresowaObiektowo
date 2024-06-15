@@ -13,6 +13,9 @@ class AdresatMenadzer
 
 public:
     int dodajAdresata(int idZalogowanegoUzytkownika, int idOstatniegoAdresata);
+    vector <Adresat> wczytajAdresatowZPliku(int idZalogowanegoUzytkownika);
+    void wypiszWszystkichAdresatow();
+
 };
 
 #endif

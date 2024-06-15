@@ -24,6 +24,8 @@ public:
     int wylogowanieUzytkownika();
     void dodawanieAdresata();
     void zmianaHaslaZalogowanegoUzytkownika(int idZalogowanegoUzytkownika);
+    void wypiszWszystkichAdresatow();
+
 };
 
 #endif

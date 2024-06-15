@@ -12,10 +12,9 @@ int main() {
     //ksiazkaAdresowa.zmianaHaslaZalogowanegoUzytkownika(idZalogowanegoUzytkownika);
     //idZalogowanegoUzytkownika = ksiazkaAdresowa.wylogowanieUzytkownika();
     //ksiazkaAdresowa.wypiszWszystkichUzytkownikow();
-    ksiazkaAdresowa.dodawanieAdresata();
-   
+    //ksiazkaAdresowa.dodawanieAdresata();
+    ksiazkaAdresowa.wypiszWszystkichAdresatow();
 
-    
     return 0;
     
 }
