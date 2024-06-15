@@ -2,7 +2,7 @@
 
 void Adresat::ustawIdUzytkownika(int noweIdUzytkownika)
 {
-    id = noweIdUzytkownika;
+    idUzytkownika = noweIdUzytkownika;
 }
 void Adresat::ustawId (int noweId)
 {

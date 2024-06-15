@@ -5,7 +5,6 @@
 int AdresatMenadzer::dodajAdresata(int idZalogowanegoUzytkownika, int idOstatniegoAdresata)
 {
     Adresat adresat;
-    vector <Adresat> adresaci;
     system("clear");
     cout << " >>> DODAWANIE NOWEGO ADRESATA <<<" << endl << endl;
     adresat = podajDaneNowegoAdresata(idZalogowanegoUzytkownika, idOstatniegoAdresata);
@@ -20,7 +19,7 @@ Adresat AdresatMenadzer::podajDaneNowegoAdresata(int idZalogowanegoUzytkownika, 
 {
     Adresat adresat;
     string imie, nazwisko;
-    adresat.ustawId(++idOstatniegoAdresata);
+    adresat.ustawId(idOstatniegoAdresata+1);
     adresat.ustawIdUzytkownika(idZalogowanegoUzytkownika);
 
     cout << "Podaj imie: ";
@@ -40,3 +39,12 @@ Adresat AdresatMenadzer::podajDaneNowegoAdresata(int idZalogowanegoUzytkownika, 
 
     return adresat;
 }
+
+/*int AdresatMenadzer::pobierzIdNowegoAdresata()
+{
+    if (adresaci.empty() == true)
+        return 1;
+    else
+        return adresaci.back().pobierzId() + 1;
+}
+*/
