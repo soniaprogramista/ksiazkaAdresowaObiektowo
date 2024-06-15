@@ -1,4 +1,8 @@
 #include "KsiazkaAdresowa.hpp"
+#include <iostream>
+#include <fstream>
+#include <sstream>
+#include<string>
 
 void KsiazkaAdresowa::rejestracjaUzytkownika()
 {
@@ -25,9 +29,10 @@ int KsiazkaAdresowa::wylogowanieUzytkownika()
     idZalogowanegoUzytkownika = uzytkownikMenadzer.wylogowanieUzytkownika();
     return idZalogowanegoUzytkownika;
 }
-int KsiazkaAdresowa::dodawanieAdresata()
+void KsiazkaAdresowa::dodawanieAdresata()
 {
-    idOstatniegoAdresata = adresatMenadzer.dodajAdresata(idZalogowanegoUzytkownika, idOstatniegoAdresata);
-
-    return idOstatniegoAdresata;
+    vector <Adresat> adresaci;
+    adresaci = plikZAdresatami.wczytajAdresatowZPliku(idZalogowanegoUzytkownika);
+    idOstatniegoAdresata =  plikZAdresatami.pobierzZPlikuIdOstatniegoAdresata();
+    adresatMenadzer.dodajAdresata(idZalogowanegoUzytkownika, idOstatniegoAdresata);
 }

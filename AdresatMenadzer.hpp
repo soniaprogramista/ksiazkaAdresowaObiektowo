@@ -7,13 +7,13 @@
 class AdresatMenadzer
 {
     PlikZAdresatami plikZAdresatami;
-    
-    
+    int pobierzIdNowegoAdresata();
+    vector <Adresat> adresaci;
+    Adresat podajDaneNowegoAdresata(int idZalogowanegoUzytkownika, int idOstatniegoAdresata);
+
 public:
     int dodajAdresata(int idZalogowanegoUzytkownika, int idOstatniegoAdresata);
-    Adresat podajDaneNowegoAdresata(int idZalogowanegoUzytkownika, int idOstatniegoAdresata);
 };
-
 
 #endif
 

@@ -12,6 +12,7 @@ class KsiazkaAdresowa
     UzytkownikMenadzer uzytkownikMenadzer;
     int idZalogowanegoUzytkownika;
     AdresatMenadzer adresatMenadzer;
+    PlikZAdresatami plikZAdresatami;
 public:
     KsiazkaAdresowa(string nazwaPlikuZUzytkownikami) : uzytkownikMenadzer(nazwaPlikuZUzytkownikami)
     {
@@ -21,7 +22,7 @@ public:
     void wypiszWszystkichUzytkownikow();
     int logowanieUzytkownika();
     int wylogowanieUzytkownika();
-    int dodawanieAdresata();
+    void dodawanieAdresata();
     void zmianaHaslaZalogowanegoUzytkownika(int idZalogowanegoUzytkownika);
 };
 
