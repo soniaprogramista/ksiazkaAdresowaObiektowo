@@ -13,9 +13,15 @@ void KsiazkaAdresowa::wypiszWszystkichUzytkownikow()
 {
     uzytkownikMenadzer.wypiszWszystkichUzytkownikow();
 }
+void KsiazkaAdresowa::wypiszWszystkichAdresatow()
+{
+    adresatMenadzer.wypiszWszystkichAdresatow();
+}
+
 int KsiazkaAdresowa::logowanieUzytkownika()
 {
     idZalogowanegoUzytkownika = uzytkownikMenadzer.logowanieUzytkownika();
+    adresatMenadzer.wczytajAdresatowZPliku(idZalogowanegoUzytkownika);
     return idZalogowanegoUzytkownika;
 }
 

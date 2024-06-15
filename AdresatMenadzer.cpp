@@ -40,6 +40,24 @@ Adresat AdresatMenadzer::podajDaneNowegoAdresata(int idZalogowanegoUzytkownika, 
     return adresat;
 }
 
+vector <Adresat> AdresatMenadzer:: wczytajAdresatowZPliku(int idZalogowanegoUzytkownika)
+{
+   adresaci =  plikZAdresatami.wczytajAdresatowZPliku(idZalogowanegoUzytkownika);
+    return adresaci;
+}
+void AdresatMenadzer::wypiszWszystkichAdresatow()
+{
+    for (int i =0; i < adresaci.size(); i ++)
+    {
+        cout << adresaci[i].pobierzId()<<endl;
+        cout << adresaci[i].pobierzIdUzytkownika()<<endl;
+        cout << adresaci[i].pobierzImie()<<endl;
+        cout << adresaci[i].pobierzNazwisko()<<endl;
+        cout << adresaci[i].pobierzNumerTelefonu()<<endl;
+        cout << adresaci[i].pobierzEmail()<<endl;
+        cout << adresaci[i].pobierzAdres()<<endl;
+    }
+}
 /*int AdresatMenadzer::pobierzIdNowegoAdresata()
 {
     if (adresaci.empty() == true)
