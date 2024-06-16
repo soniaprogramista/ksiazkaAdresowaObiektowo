@@ -4,6 +4,7 @@
 
 int AdresatMenadzer::dodajAdresata(int idZalogowanegoUzytkownika, int idOstatniegoAdresata)
 {
+    
     Adresat adresat;
     system("clear");
     cout << " >>> DODAWANIE NOWEGO ADRESATA <<<" << endl << endl;

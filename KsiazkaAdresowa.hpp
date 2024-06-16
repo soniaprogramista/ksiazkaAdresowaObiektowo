@@ -22,8 +22,8 @@ public:
     void wypiszWszystkichUzytkownikow();
     int logowanieUzytkownika();
     int wylogowanieUzytkownika();
-    void dodawanieAdresata();
     void zmianaHaslaZalogowanegoUzytkownika(int idZalogowanegoUzytkownika);
+    void dodawanieAdresata();
     void wypiszWszystkichAdresatow();
 
 };
