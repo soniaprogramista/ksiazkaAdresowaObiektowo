@@ -2,8 +2,10 @@
 #include "MetodyPomocnicze.hpp"
 
 
-int AdresatMenadzer::dodajAdresata(int idZalogowanegoUzytkownika, int idOstatniegoAdresata)
+int AdresatMenadzer::dodajAdresata(int idZalogowanegoUzytkownika)
 {
+    int idOstatniegoAdresata;
+    idOstatniegoAdresata = plikZAdresatami.pobierzZPlikuIdOstatniegoAdresata();
     Adresat adresat;
     system("clear");
     cout << " >>> DODAWANIE NOWEGO ADRESATA <<<" << endl << endl;
