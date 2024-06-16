@@ -37,6 +37,5 @@ int KsiazkaAdresowa::wylogowanieUzytkownika()
 }
 void KsiazkaAdresowa::dodawanieAdresata()
 {
-    idOstatniegoAdresata =  plikZAdresatami.pobierzZPlikuIdOstatniegoAdresata();
-    adresatMenadzer.dodajAdresata(idZalogowanegoUzytkownika, idOstatniegoAdresata);
+    adresatMenadzer.dodajAdresata(idZalogowanegoUzytkownika);
 }
