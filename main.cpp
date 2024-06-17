@@ -4,15 +4,14 @@
 using namespace std;
 
 int main() {
-    int idZalogowanegoUzytkownika;
-    KsiazkaAdresowa ksiazkaAdresowa("Uzytkownicy.txt");
-    idZalogowanegoUzytkownika = ksiazkaAdresowa.logowanieUzytkownika();
-    //idZalogowanegoUzytkownika = ksiazkaAdresowa.wylogowanieUzytkownika();
-    //ksiazkaAdresowa.wypiszWszystkichUzytkownikow();
+    
+    KsiazkaAdresowa ksiazkaAdresowa("Uzytkownicy.txt", "Adresaci.txt");
     ksiazkaAdresowa.wypiszWszystkichAdresatow();
+    ksiazkaAdresowa.zmianaHaslaZalogowanegoUzytkownika();
     ksiazkaAdresowa.dodawanieAdresata();
-    ksiazkaAdresowa.wypiszWszystkichAdresatow();
-    ksiazkaAdresowa.zmianaHaslaZalogowanegoUzytkownika(idZalogowanegoUzytkownika);
+    ksiazkaAdresowa.wylogowanieUzytkownika();
+
+
     return 0;
     
 }
