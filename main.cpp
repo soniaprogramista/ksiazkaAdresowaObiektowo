@@ -11,7 +11,6 @@ int main() {
     ksiazkaAdresowa.dodawanieAdresata();
     ksiazkaAdresowa.wylogowanieUzytkownika();
 
-
     return 0;
     
 }
