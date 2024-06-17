@@ -12,7 +12,9 @@ public:
     static string wczytajLinie();
     static int konwersjaStringNaInt(string liczba);
     static string pobierzLiczbe(string tekst, int pozycjaZnaku);
-
+    static char wybierzOpcjeZMenuUzytkownika();
+    static char wczytajZnak();
+    static char wybierzOpcjeZMenuGlownego();
 };
 
 #endif
