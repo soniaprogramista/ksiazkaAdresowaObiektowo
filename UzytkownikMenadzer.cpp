@@ -54,6 +54,7 @@ bool UzytkownikMenadzer::czyIstniejeLogin(string login)
     }return false;
     
 }
+
 void UzytkownikMenadzer::wypiszWszystkichUzytkownikow()
 {
     for (int i =0; i < uzytkownicy.size(); i ++)
@@ -133,6 +134,7 @@ bool UzytkownikMenadzer::czyUzytkownikJestZalogowany()
     else
         return false;
 }
+
 int UzytkownikMenadzer::pobierzIdZalogowanegoUzytkownika()
 {
     return idZalogowanegoUzytkownika;

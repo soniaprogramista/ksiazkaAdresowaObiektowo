@@ -13,6 +13,7 @@ void KsiazkaAdresowa::wypiszWszystkichUzytkownikow()
 {
     uzytkownikMenadzer.wypiszWszystkichUzytkownikow();
 }
+
 void KsiazkaAdresowa::wypiszWszystkichAdresatow()
 {
     if (uzytkownikMenadzer.czyUzytkownikJestZalogowany())
@@ -57,6 +58,7 @@ int KsiazkaAdresowa::wylogowanieUzytkownika()
     return 0;
     
 }
+
 void KsiazkaAdresowa::dodawanieAdresata()
 {
     if (uzytkownikMenadzer.czyUzytkownikJestZalogowany())
@@ -66,4 +68,14 @@ void KsiazkaAdresowa::dodawanieAdresata()
     }
     else
         cout << "Nie jestes zalogowany" <<endl;
+}
+
+bool KsiazkaAdresowa::czyUzytkownikJestZalogowany()
+{
+    if(uzytkownikMenadzer.czyUzytkownikJestZalogowany())
+    {
+        return true;
+    }
+    else
+        return false;
 }

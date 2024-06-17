@@ -11,6 +11,9 @@ void AdresatMenadzer::dodajAdresata()
 
     adresaci.push_back(adresat);
     plikZAdresatami.dopiszAdresataDoPliku(adresat);
+    cout << endl;
+    cout << "Adresat zostal dodany"<< endl;
+    system("read -n 1 -s -p\" Press any key to continue...\"");
 }
 
 Adresat AdresatMenadzer::podajDaneNowegoAdresata()
@@ -44,19 +47,23 @@ vector <Adresat> AdresatMenadzer:: wczytajAdresatowZPliku(int idZalogowanegoUzyt
    adresaci =  plikZAdresatami.wczytajAdresatowZPliku(idZalogowanegoUzytkownika);
     return adresaci;
 }
+
 void AdresatMenadzer::wypiszWszystkichAdresatow()
 {
     for (int i =0; i < adresaci.size(); i ++)
     {
         cout << adresaci[i].pobierzId()<<endl;
-        cout << adresaci[i].pobierzIdUzytkownika()<<endl;
         cout << adresaci[i].pobierzImie()<<endl;
         cout << adresaci[i].pobierzNazwisko()<<endl;
         cout << adresaci[i].pobierzNumerTelefonu()<<endl;
         cout << adresaci[i].pobierzEmail()<<endl;
         cout << adresaci[i].pobierzAdres()<<endl;
+        cout << endl;
     }
+    system("read -n 1 -s -p\" Press any key to continue...\"");
+
 }
+
 /*int AdresatMenadzer::pobierzIdNowegoAdresata()
 {
     if (adresaci.empty() == true)
