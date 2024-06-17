@@ -2,27 +2,24 @@
 #include "MetodyPomocnicze.hpp"
 
 
-int AdresatMenadzer::dodajAdresata(int idZalogowanegoUzytkownika)
+void AdresatMenadzer::dodajAdresata()
 {
-    int idOstatniegoAdresata;
-    idOstatniegoAdresata = plikZAdresatami.pobierzZPlikuIdOstatniegoAdresata();
     Adresat adresat;
     system("clear");
     cout << " >>> DODAWANIE NOWEGO ADRESATA <<<" << endl << endl;
-    adresat = podajDaneNowegoAdresata(idZalogowanegoUzytkownika, idOstatniegoAdresata);
+    adresat = podajDaneNowegoAdresata();
 
     adresaci.push_back(adresat);
     plikZAdresatami.dopiszAdresataDoPliku(adresat);
-
-    return idOstatniegoAdresata+1;
 }
 
-Adresat AdresatMenadzer::podajDaneNowegoAdresata(int idZalogowanegoUzytkownika, int idOstatniegoAdresata)
+Adresat AdresatMenadzer::podajDaneNowegoAdresata()
 {
     Adresat adresat;
+
     string imie, nazwisko;
-    adresat.ustawId(idOstatniegoAdresata+1);
-    adresat.ustawIdUzytkownika(idZalogowanegoUzytkownika);
+    adresat.ustawId(plikZAdresatami.pobierzZPlikuIdOstatniegoAdresata()+1);
+    adresat.ustawIdUzytkownika(ID_ZALOGOWANEGO_UZYTKOWNIKA);
 
     cout << "Podaj imie: ";
     adresat.ustawImie(MetodyPomocnicze::wczytajLinie());

@@ -15,27 +15,55 @@ void KsiazkaAdresowa::wypiszWszystkichUzytkownikow()
 }
 void KsiazkaAdresowa::wypiszWszystkichAdresatow()
 {
-    adresatMenadzer.wypiszWszystkichAdresatow();
+    if (uzytkownikMenadzer.czyUzytkownikJestZalogowany())
+    {
+        adresatMenadzer->wypiszWszystkichAdresatow();
+    }
+    else
+        cout << "Nie jestes zalogowany"<<endl;
 }
 
 int KsiazkaAdresowa::logowanieUzytkownika()
 {
-    idZalogowanegoUzytkownika = uzytkownikMenadzer.logowanieUzytkownika();
-    adresatMenadzer.wczytajAdresatowZPliku(idZalogowanegoUzytkownika);
+   idZalogowanegoUzytkownika =  uzytkownikMenadzer.logowanieUzytkownika();
+    if (uzytkownikMenadzer.czyUzytkownikJestZalogowany())
+    {
+        adresatMenadzer = new AdresatMenadzer (NAZWA_PLIKU_Z_ADRESATAMI, idZalogowanegoUzytkownika);
+    }
     return idZalogowanegoUzytkownika;
 }
 
-void KsiazkaAdresowa::zmianaHaslaZalogowanegoUzytkownika(int idZalogowanegoUzytkownika)
+void KsiazkaAdresowa::zmianaHaslaZalogowanegoUzytkownika()
 {
-    uzytkownikMenadzer.zmianaHaslaZalogowanegoUzytkownika(idZalogowanegoUzytkownika);
+    if (uzytkownikMenadzer.czyUzytkownikJestZalogowany())
+    {
+        uzytkownikMenadzer.zmianaHaslaZalogowanegoUzytkownika();
+    }
+    else
+        cout << "Nie jestes zalogowany" <<endl;
 }
 
 int KsiazkaAdresowa::wylogowanieUzytkownika()
 {
-    idZalogowanegoUzytkownika = uzytkownikMenadzer.wylogowanieUzytkownika();
-    return idZalogowanegoUzytkownika;
+    if (uzytkownikMenadzer.czyUzytkownikJestZalogowany())
+    {
+        idZalogowanegoUzytkownika = uzytkownikMenadzer.wylogowanieUzytkownika();
+        delete adresatMenadzer;
+        adresatMenadzer = NULL;
+        return idZalogowanegoUzytkownika;
+    }
+    else
+        cout << "Nie jestes zalogowany" <<endl;
+    return 0;
+    
 }
 void KsiazkaAdresowa::dodawanieAdresata()
 {
-    adresatMenadzer.dodajAdresata(idZalogowanegoUzytkownika);
+    if (uzytkownikMenadzer.czyUzytkownikJestZalogowany())
+    {
+        adresatMenadzer->dodajAdresata();
+
+    }
+    else
+        cout << "Nie jestes zalogowany" <<endl;
 }
