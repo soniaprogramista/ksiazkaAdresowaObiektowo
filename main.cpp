@@ -5,7 +5,7 @@
 using namespace std;
 
 int main() {
-    
+    vector <Adresat> adresaci;
     KsiazkaAdresowa ksiazkaAdresowa("Uzytkownicy.txt", "Adresaci.txt");
     char wybor;
     
@@ -42,10 +42,10 @@ int main() {
                     ksiazkaAdresowa.dodawanieAdresata();
                     break;
                 case '2':
-                    
+                    ksiazkaAdresowa.wyszukajPoImieniu();
                     break;
                 case '3':
-                    
+                    ksiazkaAdresowa.wyszukajPoNazwisku();
                     break;
                 case '4':
                     ksiazkaAdresowa.wypiszWszystkichAdresatow();
@@ -54,7 +54,7 @@ int main() {
                     
                     break;
                 case '6':
-                    
+                  
                     break;
                 case '7':
                     ksiazkaAdresowa.zmianaHaslaZalogowanegoUzytkownika();

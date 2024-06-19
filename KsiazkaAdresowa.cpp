@@ -79,3 +79,15 @@ bool KsiazkaAdresowa::czyUzytkownikJestZalogowany()
     else
         return false;
 }
+void KsiazkaAdresowa::wyszukajPoImieniu()
+{
+    adresatMenadzer->wyszukajAdresatowPoImieniu();
+}
+void KsiazkaAdresowa::wyszukajPoNazwisku()
+{
+    adresatMenadzer->wyszukajAdresatowPoNazwisku();
+}
+void KsiazkaAdresowa::usunAdresata()
+{
+    adresatMenadzer -> usunAdresata();
+}
