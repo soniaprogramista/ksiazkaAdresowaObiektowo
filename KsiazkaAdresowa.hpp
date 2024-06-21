@@ -32,6 +32,8 @@ public:
     void wyszukajPoImieniu();
     void wyszukajPoNazwisku();
     void usunAdresata();
+    void edytujAdresata();
+
 
     bool czyUzytkownikJestZalogowany();
 
