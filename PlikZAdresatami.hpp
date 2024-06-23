@@ -18,7 +18,7 @@ public:
     };
     void usunWybranaLinieWPliku(int numerUsuwanejLinii, vector <Adresat> adresaci);
     static string zamienDaneAdresataNaLinieZDanymiOddzielonymiPionowymiKreskami(Adresat adresat);
-    void zaktualizujDaneWybranegoAdresata(Adresat adresat, int idEdytowanegoAdresata);
+    void zaktualizujDaneWybranegoAdresata(Adresat adresat);
     void edytujWybranaLinieWPliku(int numerEdytowanejLinii, string liniaZDanymiAdresataOddzielonePionowymiKreskami);
     static void usunPlik(string nazwaPlikuZRozszerzeniem);
     static void zmienNazwePliku(string staraNazwa, string nowaNazwa);
