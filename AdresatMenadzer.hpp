@@ -32,9 +32,6 @@ public:
     void wyswietlDaneAdresata(Adresat adresat);
     void wyswietlIloscWyszukanychAdresatow(int iloscAdresatow);
 
-
-
-
 };
 
 #endif
