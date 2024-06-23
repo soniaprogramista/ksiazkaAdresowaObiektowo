@@ -170,37 +170,42 @@ Adresat PlikZAdresatami::pobierzDaneAdresata(string daneAdresataOddzielonePionow
     return adresat;
 }
 
-void PlikZAdresatami::usunWybranaLinieWPliku(int numerUsuwanejLinii)
+void PlikZAdresatami::usunWybranaLinieWPliku(int idUsuwanegoAdresata, vector <Adresat> adresaci)
 {
     fstream odczytywanyPlikTekstowy, tymczasowyPlikTekstowy;
     string nazwaTymczasowegoPlikuZAdresatami = "AdresaciTymczasowo.txt";
     string wczytanaLinia = "";
     int numerWczytanejLinii = 1;
-
+    Adresat adresat;
     odczytywanyPlikTekstowy.open(NAZWA_PLIKU_Z_ADRESATAMI.c_str(), ios::in);
     tymczasowyPlikTekstowy.open(nazwaTymczasowegoPlikuZAdresatami.c_str(), ios::out | ios::app);
+    int pozycjaPrzedostatniegoElementuWWektorze = adresaci.size() - 2;
 
-    if (odczytywanyPlikTekstowy.good() == true && numerUsuwanejLinii != 0)
+    
+    if (odczytywanyPlikTekstowy.good() == true)
     {
         while (getline(odczytywanyPlikTekstowy, wczytanaLinia))
         {
             // Tych przypadkow jest tyle, gdyz chcemy osiagnac taki efekt,
             // aby na koncu pliku nie bylo pustej linii
-            if (numerWczytanejLinii == numerUsuwanejLinii) {}
-            else if (numerWczytanejLinii == 1 && numerWczytanejLinii != numerUsuwanejLinii)
+            if(idUsuwanegoAdresata == PlikZAdresatami::pobierzIdAdresataZDanychOddzielonychPionowymiKreskami(wczytanaLinia)) {}
+            else if (idUsuwanegoAdresata != PlikZAdresatami::pobierzIdAdresataZDanychOddzielonychPionowymiKreskami(wczytanaLinia) && idUsuwanegoAdresata != adresaci.back().pobierzId() && PlikZAdresatami::pobierzIdAdresataZDanychOddzielonychPionowymiKreskami(wczytanaLinia) != adresaci.back().pobierzId())
+                
+                tymczasowyPlikTekstowy << wczytanaLinia << endl;
+            else if (idUsuwanegoAdresata != PlikZAdresatami::pobierzIdAdresataZDanychOddzielonychPionowymiKreskami(wczytanaLinia) && idUsuwanegoAdresata != adresaci.back().pobierzId() && PlikZAdresatami::pobierzIdAdresataZDanychOddzielonychPionowymiKreskami(wczytanaLinia) == adresaci.back().pobierzId())
+                
                 tymczasowyPlikTekstowy << wczytanaLinia;
-            else if (numerWczytanejLinii == 2 && numerUsuwanejLinii == 1)
+            else if (idUsuwanegoAdresata != PlikZAdresatami::pobierzIdAdresataZDanychOddzielonychPionowymiKreskami(wczytanaLinia) && idUsuwanegoAdresata == adresaci.back().pobierzId() &&  PlikZAdresatami::pobierzIdAdresataZDanychOddzielonychPionowymiKreskami(wczytanaLinia) != adresaci[pozycjaPrzedostatniegoElementuWWektorze].pobierzId())
+                
+                tymczasowyPlikTekstowy << wczytanaLinia <<endl;
+            else if (idUsuwanegoAdresata != PlikZAdresatami::pobierzIdAdresataZDanychOddzielonychPionowymiKreskami(wczytanaLinia) && idUsuwanegoAdresata == adresaci.back().pobierzId() &&  PlikZAdresatami::pobierzIdAdresataZDanychOddzielonychPionowymiKreskami(wczytanaLinia) == adresaci[pozycjaPrzedostatniegoElementuWWektorze].pobierzId())
+                
                 tymczasowyPlikTekstowy << wczytanaLinia;
-            else if (numerWczytanejLinii > 2 && numerUsuwanejLinii == 1)
-                tymczasowyPlikTekstowy << endl << wczytanaLinia;
-            else if (numerWczytanejLinii > 1 && numerUsuwanejLinii != 1)
-                tymczasowyPlikTekstowy << endl << wczytanaLinia;
             numerWczytanejLinii++;
         }
         odczytywanyPlikTekstowy.close();
         tymczasowyPlikTekstowy.close();
     
-        
         usunPlik(NAZWA_PLIKU_Z_ADRESATAMI);
         zmienNazwePliku(nazwaTymczasowegoPlikuZAdresatami, NAZWA_PLIKU_Z_ADRESATAMI);
     }

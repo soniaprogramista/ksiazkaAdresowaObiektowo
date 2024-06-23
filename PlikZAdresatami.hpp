@@ -16,7 +16,7 @@ public:
     {
         idOstatniegoAdresata = 0;
     };
-     void usunWybranaLinieWPliku(int numerUsuwanejLinii);
+    void usunWybranaLinieWPliku(int numerUsuwanejLinii, vector <Adresat> adresaci);
     static string zamienDaneAdresataNaLinieZDanymiOddzielonymiPionowymiKreskami(Adresat adresat);
     void zaktualizujDaneWybranegoAdresata(Adresat adresat, int idEdytowanegoAdresata);
     void edytujWybranaLinieWPliku(int numerEdytowanejLinii, string liniaZDanymiAdresataOddzielonePionowymiKreskami);
