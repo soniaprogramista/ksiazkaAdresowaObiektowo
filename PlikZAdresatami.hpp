@@ -2,17 +2,16 @@
 #define PlikZAdresatami_hpp
 #include "Adresat.hpp"
 #include <stdio.h>
+#include "PlikTekstowy.hpp"
 
-class PlikZAdresatami
+class PlikZAdresatami : public PlikTekstowy
 {
-    const string NAZWA_PLIKU_Z_ADRESATAMI;
     int idOstatniegoAdresata;
-    bool czyPlikJestPusty();
     int pobierzIdUzytkownikaZDanychOddzielonychPionowymiKreskami(string daneJednegoAdresataOddzielonePionowymiKreskami);
     Adresat pobierzDaneAdresata(string daneAdresataOddzielonePionowymiKreskami);
     string nazwaTymczasowegoPlikuZAdresatami;
 public:
-    PlikZAdresatami(string nazwaPlikuZAdresatami) : NAZWA_PLIKU_Z_ADRESATAMI(nazwaPlikuZAdresatami)
+    PlikZAdresatami(string nazwaPliku) : PlikTekstowy(nazwaPliku)
     {
         idOstatniegoAdresata = 0;
     };

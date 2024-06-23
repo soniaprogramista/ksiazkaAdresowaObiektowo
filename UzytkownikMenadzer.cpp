@@ -23,7 +23,7 @@ Uzytkownik UzytkownikMenadzer::podajDaneNowegoUzytkownika()
         cout << "Podaj login: ";
         cin >> login;
         uzytkownik.ustawLogin(login);
-    } while (czyIstniejeLogin(uzytkownik.pobierzLogin()) == true);
+    } while (czyIstniejeLogin(uzytkownik.pobierzLogin()));
 
     cout << "Podaj haslo: ";
     cin >> haslo;
@@ -49,10 +49,8 @@ bool UzytkownikMenadzer::czyIstniejeLogin(string login)
             cout << endl << "Istnieje uzytkownik o takim loginie." << endl;
             return true;
         }
-        else i++;
         
     }return false;
-    
 }
 
 void UzytkownikMenadzer::wypiszWszystkichUzytkownikow()
