@@ -1,6 +1,5 @@
 #ifndef METODYPOMOCNICZE_H
 #define METODYPOMOCNICZE_H
-
 #include <iostream>
 #include <sstream>
 using namespace std;
@@ -17,7 +16,6 @@ public:
     static char wybierzOpcjeZMenuGlownego();
     static int wczytajLiczbeCalkowita();
     static char wybierzOpcjeZMenuEdycja();
-
 };
 
 #endif

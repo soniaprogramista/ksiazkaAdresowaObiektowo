@@ -6,6 +6,7 @@ using namespace std;
 
 int main() {
     vector <Adresat> adresaci;
+    vector <Uzytkownik> uzytkownicy;
     KsiazkaAdresowa ksiazkaAdresowa("Uzytkownicy.txt", "Adresaci.txt");
     char wybor;
     

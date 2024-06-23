@@ -20,7 +20,6 @@ int MetodyPomocnicze::konwersjaStringNaInt(string liczba)
     int liczbaInt;
     istringstream iss(liczba);
     iss >> liczbaInt;
-
     return liczbaInt;
 }
 
@@ -110,6 +109,7 @@ char MetodyPomocnicze::wybierzOpcjeZMenuGlownego()
 
     return wybor;
 }
+
 char MetodyPomocnicze::wybierzOpcjeZMenuEdycja()
 {
     char wybor;

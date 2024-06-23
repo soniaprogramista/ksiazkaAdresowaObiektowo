@@ -2,23 +2,22 @@
 #define PlikZAdresatami_hpp
 #include "Adresat.hpp"
 #include <stdio.h>
+#include "PlikTekstowy.hpp"
 
-class PlikZAdresatami
+class PlikZAdresatami : public PlikTekstowy
 {
-    const string NAZWA_PLIKU_Z_ADRESATAMI;
     int idOstatniegoAdresata;
-    bool czyPlikJestPusty();
     int pobierzIdUzytkownikaZDanychOddzielonychPionowymiKreskami(string daneJednegoAdresataOddzielonePionowymiKreskami);
     Adresat pobierzDaneAdresata(string daneAdresataOddzielonePionowymiKreskami);
     string nazwaTymczasowegoPlikuZAdresatami;
 public:
-    PlikZAdresatami(string nazwaPlikuZAdresatami) : NAZWA_PLIKU_Z_ADRESATAMI(nazwaPlikuZAdresatami)
+    PlikZAdresatami(string nazwaPliku) : PlikTekstowy(nazwaPliku)
     {
         idOstatniegoAdresata = 0;
     };
-     void usunWybranaLinieWPliku(int numerUsuwanejLinii);
+    void usunWybranaLinieWPliku(int numerUsuwanejLinii, vector <Adresat> adresaci);
     static string zamienDaneAdresataNaLinieZDanymiOddzielonymiPionowymiKreskami(Adresat adresat);
-    void zaktualizujDaneWybranegoAdresata(Adresat adresat, int idEdytowanegoAdresata);
+    void zaktualizujDaneWybranegoAdresata(Adresat adresat);
     void edytujWybranaLinieWPliku(int numerEdytowanejLinii, string liniaZDanymiAdresataOddzielonePionowymiKreskami);
     static void usunPlik(string nazwaPlikuZRozszerzeniem);
     static void zmienNazwePliku(string staraNazwa, string nowaNazwa);

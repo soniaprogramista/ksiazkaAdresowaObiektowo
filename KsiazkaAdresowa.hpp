@@ -1,10 +1,9 @@
 #ifndef KSIAZKAADRESOWA_H
 #define KSIAZKAADRESOWA_H
-
 #include <iostream>
-using namespace std;
 #include "UzytkownikMenadzer.hpp"
 #include "AdresatMenadzer.hpp"
+using namespace std;
 
 class KsiazkaAdresowa
 {
@@ -12,6 +11,7 @@ class KsiazkaAdresowa
     AdresatMenadzer *adresatMenadzer;
     int idZalogowanegoUzytkownika;
     const string NAZWA_PLIKU_Z_ADRESATAMI;
+
 public:
     KsiazkaAdresowa(string nazwaPlikuZUzytkownikami, string nazwaPlikuZAdresatami) : uzytkownikMenadzer(nazwaPlikuZUzytkownikami), NAZWA_PLIKU_Z_ADRESATAMI(nazwaPlikuZAdresatami)
     {       
@@ -33,10 +33,7 @@ public:
     void wyszukajPoNazwisku();
     void usunAdresata();
     void edytujAdresata();
-
-
     bool czyUzytkownikJestZalogowany();
-
 };
 
 #endif
